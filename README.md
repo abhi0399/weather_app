@@ -2,6 +2,9 @@
 
 A simple and responsive weather application that shows current weather conditions for any city.
 
+## Live Demo
+Visit the live app: [Weather WebApp](https://abhi0399.github.io/weather_app)
+
 ## Features
 - Search weather by city name
 - Shows temperature, humidity, and weather conditions
