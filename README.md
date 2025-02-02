@@ -2,6 +2,8 @@
 
 A simple and responsive weather application that shows current weather conditions for any city.
 
+Last updated: Feb 2, 2025
+
 ## Live Demo
 Visit the live app: [Weather WebApp](https://abhi0399.github.io/weather_app)
 
