@@ -1,9 +1,9 @@
 class WeatherApp {
     constructor() {
-        this.API_KEY = '78d2160840bf28242fed84541124c38b'; // Replace with your OpenWeatherMap API key
+        this.API_KEY = '78d2160840bf28242fed84541124c38b'; 
         this.isMetric = true;
 
-        // DOM Elements
+        
         this.form = document.getElementById('weatherForm');
         this.cityInput = document.getElementById('cityInput');
         this.locationBtn = document.getElementById('locationBtn');
@@ -12,12 +12,12 @@ class WeatherApp {
         this.errorMessage = document.getElementById('errorMessage');
         this.unitText = document.getElementById('unitText');
 
-        // Bind events
+        
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
         this.locationBtn.addEventListener('click', () => this.getLocation());
         this.unitToggle.addEventListener('change', () => this.toggleUnit());
 
-        // Test API key on startup
+        
         this.testAPIKey().then(isValid => {
             if (!isValid) {
                 this.showError('Invalid API key or API access issue');
@@ -91,7 +91,7 @@ class WeatherApp {
                     try {
                         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${this.API_KEY}`;
                         
-                        console.log('Fetching weather from:', url); // Debug log
+                        console.log('Fetching weather from:', url); 
                         
                         const response = await fetch(url);
                         
@@ -103,12 +103,12 @@ class WeatherApp {
                         const data = await response.json();
                         this.displayWeather(data);
                     } catch (error) {
-                        console.error('Detailed error:', error); // Debug log
+                        console.error('Detailed error:', error); 
                         this.showError(`Error: ${error.message}`);
                     }
                 },
                 (error) => {
-                    // More specific geolocation errors
+                    
                     let errorMessage;
                     switch(error.code) {
                         case error.PERMISSION_DENIED:
@@ -135,7 +135,7 @@ class WeatherApp {
         this.isMetric = !this.isMetric;
         this.unitText.textContent = this.isMetric ? '°C' : '°F';
         
-        // Update displayed temperature if weather data is shown
+        
         if (!this.weatherInfo.classList.contains('hidden')) {
             const tempElement = document.getElementById('temperature');
             const currentTemp = parseFloat(tempElement.textContent);
@@ -146,7 +146,7 @@ class WeatherApp {
         }
     }
 
-    // Test your API key with a simple city query first
+    
     async testAPIKey() {
         try {
             const response = await fetch(
@@ -162,5 +162,5 @@ class WeatherApp {
     }
 }
 
-// Initialize the app
+
 const weatherApp = new WeatherApp(); 
