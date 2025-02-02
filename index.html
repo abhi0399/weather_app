@@ -3,51 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App - Updated Version</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Weather App</h1>
+        <h1>Weather WebApp</h1>
         
         <div class="search-container">
             <form id="weatherForm">
                 <input 
                     type="text" 
                     id="cityInput" 
-                    placeholder="Enter city name"
+                    placeholder="Enter city name..."
                     required
                 >
                 <button type="submit">Search</button>
             </form>
-            <button id="locationBtn" title="Use current location">
-                📍 Use My Location
-            </button>
+            <button id="locationBtn" class="location-btn">Use My Location</button>
         </div>
 
         <div class="unit-toggle">
             <label class="switch">
                 <input type="checkbox" id="unitToggle">
                 <span class="slider round"></span>
+                <span id="unitText">°C</span>
             </label>
-            <span id="unitText">°C</span>
         </div>
 
         <div id="weatherInfo" class="weather-info hidden">
             <h2 id="cityName"></h2>
-            <div class="weather-details">
-                <img id="weatherIcon" alt="Weather icon">
-                <div class="temperature">
+            <div class="weather-display">
+                <img id="weatherIcon" src="" alt="Weather icon">
+                <div class="temperature-container">
                     <span id="temperature"></span>
-                    <span id="condition"></span>
-                </div>
-                <div class="additional-info">
-                    <p>Humidity: <span id="humidity"></span>%</p>
+                    <div class="weather-details">
+                        <p>Condition: <span id="condition"></span></p>
+                        <p>Humidity: <span id="humidity"></span>%</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="errorMessage" class="error hidden"></div>
+        <div id="errorMessage" class="error-message hidden"></div>
     </div>
     <script src="js/app.js"></script>
 </body>
