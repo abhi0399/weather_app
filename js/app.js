@@ -163,4 +163,4 @@ class WeatherApp {
 }
 
 
-const weatherApp = new WeatherApp(); 
+const weatherApp = new WeatherApp();
